@@ -1,0 +1,156 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#f5f7fa,#e4ecf7);
+color:#222;
+transition:0.3s;
+}
+
+body.dark{
+background:#111;
+color:#fff;
+}
+
+.container{
+display:flex;
+height:100vh;
+}
+
+.sidebar{
+width:250px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(20px);
+padding:25px;
+border-right:1px solid rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+body.dark .sidebar{
+background:rgba(20,20,20,0.9);
+}
+
+.logo{
+margin-bottom:30px;
+font-weight:600;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar ul li{
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+margin-bottom:8px;
+transition:0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active{
+background:rgba(0,0,0,0.08);
+}
+
+body.dark .sidebar ul li:hover,
+body.dark .sidebar ul li.active{
+background:rgba(255,255,255,0.1);
+}
+
+.main{
+flex:1;
+padding:35px;
+overflow:auto;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+background:#4CAF50;
+color:white;
+transition:0.3s;
+}
+
+button:hover{
+background:#45a049;
+}
+
+.card{
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(20px);
+padding:25px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.05);
+animation:fade 0.4s ease;
+}
+
+body.dark .card{
+background:rgba(30,30,30,0.9);
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.progress-bar{
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+height:12px;
+}
+
+.progress-fill{
+height:100%;
+background:#4CAF50;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* Responsive CSS */
+@media(max-width:1024px){
+  .container{
+    flex-direction:column;
+  }
+  .sidebar{
+    width:100%;
+    display:flex;
+    overflow-x:auto;
+    padding:15px;
+  }
+  .sidebar ul{
+    display:flex;
+    flex-wrap:nowrap;
+  }
+  .sidebar ul li{
+    flex:1;
+    text-align:center;
+    margin-right:5px;
+  }
+  .main{
+    padding:20px;
+  }
+  .cards{
+    grid-template-columns:1fr !important;
+  }
+}
